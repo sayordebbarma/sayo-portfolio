@@ -1,5 +1,5 @@
 import React from 'react'
-import './About'
+import './About.css'
 import AboutImg from '../../Assets/aboutImg.jpeg'
 import Resume from '../../Assets/Resume.pdf'
 import Info from './Info'
@@ -18,7 +18,7 @@ const About = () => {
                 A full-stack & IOS developer, I create web pages with UI / UX user interface, I have years of experience and many clients are happy with the projects carried out.
                 </p>
 
-                <a download="" href={Resume} className="button button_flex">
+                <a download="" href={Resume} className="button button_flex about_download">
                     Download resume
                     <svg
                 class="button__icon"
