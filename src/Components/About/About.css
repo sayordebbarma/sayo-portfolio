@@ -1,4 +1,4 @@
-.about_container {
+.about_content {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     column-gap: 4rem;
@@ -55,7 +55,7 @@
 /*  RESPONSIVENESS  */
 /* For large devices */
 @media screen and (max-width: 992px) {
-    .about_container {
+    .about_content {
         grid-template-columns: 1fr;
         row-gap: 2.5rem;
     }
