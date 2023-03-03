@@ -43,5 +43,121 @@
 }
 
 .services_model {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: var(--z-modal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
 }
+
+.services_model_content {
+    width: 500px;
+    position: relative;
+    background-color: var(--container-color);
+    padding: 4.5rem 2.5rem 2.5rem;
+    border-radius: 1.5rem
+}
+
+.services_model_close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--title-color); /* might remove*/
+    cursor: pointer;
+}
+
+.services_model_title, .services_model_description {
+    text-align: center;
+}
+
+.services_model_title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+}
+
+.services_model_description {
+    font-size: var(--small-font-size);
+    /*padding: 0 3.5rem;*/
+    margin-bottom: var(--mb-2)
+}
+
+.services_model_services {
+    row-gap: 0.75rem;
+}
+
+.services_model_service {
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+}
+
+.services_model_icon {
+    color: var(--title-color);
+    font-size: 1.1rem;
+}
+
+.services_model_info {
+    font-size: var(--small-font-size);
+}
+
+/*active model for service model*/
+.active_model {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*  RESPONSIVENESS  */
+    /* For large devices */
+    @media screen and (max-width: 992px) {
+        .services_container {
+            grid-template-columns: repeat(3, 218px);
+        }
+    }
+  
+    /* For medium devices */
+    @media screen and (max-width: 768px) {
+        .services_container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .services_content {
+            padding: 3.5rem 0.5rem 1.25rem 1.5rem;
+        }
+
+        .services_icon {
+            font-size: 1.5rem;
+        }
+
+    }
+    
+    @media screen and (max-width: 576px) {
+        .services_model_content {
+            padding: 4.5rem 1.5rem 2.5rem;
+        }
+
+        .services_model_description {
+            padding: 0;
+        }
+    }
+    
+    /* For small devices */
+    @media screen and (max-width: 350px) {
+        .services_container {
+            grid-template-columns: max-content;
+        }
+
+        .services_content {
+            padding: 6rem;
+        }
+    }

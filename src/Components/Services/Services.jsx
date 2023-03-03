@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Services.css'
 
 const Services = () => {
+    const [toggle, setToggle] = useState(0);
+
+    const toggleTab = (index) => {
+        setToggle(index);
+    }
   return (
     <section className="services section" id="services">
         <h2 className="section_title">Services</h2>
@@ -13,13 +18,13 @@ const Services = () => {
                     <i className="uil uil-browser services_icon"></i>
                     <h3 className="services_title">Web <br /> Developer</h3>
                 </div>
-                <span className="services_button">
-                    View more<i class="uil uil-arrow-right services_button_icon"></i>
+                <span onClick={() => toggleTab(1)} className="services_button">
+                    View more <i class="uil uil-arrow-right services_button_icon"></i>
                 </span>
 
-                <div className="services_model">
+                <div className={toggle === 1 ? "services_model active_model" : "services_model"}>
                     <div className="services_model_content">
-                        <i className="uil uil-times services_model_close"></i>
+                        <i onClick={() => toggleTab(0)} className="uil uil-times services_model_close"></i>
                         <h3 className="services_model_title">Web Developer</h3>
                         <p className="services_model_description">Service with more than 3 years of experience. Providing quality work to clients and companies.</p>
 
@@ -45,13 +50,13 @@ const Services = () => {
                     <i className="uil uil-object-group services_icon"></i>
                     <h3 className="services_title">UI/UX <br /> Designer</h3>
                 </div>
-                <span className="services_button">
+                <span onClick={() => toggleTab(2)} className="services_button">
                     View more<i class="uil uil-arrow-right services_button_icon"></i>
                 </span>
 
-                <div className="services_model">
+                <div className={toggle === 2 ? "services_model active_model" : "services_model"}>
                     <div className="services_model_content">
-                        <i className="uil uil-times services_model_close"></i>
+                        <i onClick={() => toggleTab(0)} className="uil uil-times services_model_close"></i>
                         <h3 className="services_model_title">UI/UX Designer</h3>
                         <p className="services_model_description">Service with more than 3 years of experience. Providing quality work to clients and companies.</p>
 
@@ -77,13 +82,13 @@ const Services = () => {
                     <i className="uil uil-apple-alt services_icon"></i>
                     <h3 className="services_title">IOS <br /> Developer</h3>
                 </div>
-                <span className="services_button">
+                <span onClick={() => toggleTab(3)} className="services_button">
                     View more<i class="uil uil-arrow-right services_button_icon"></i>
                 </span>
 
-                <div className="services_model">
+                <div className={toggle === 3 ? "services_model active_model" : "services_model"}>
                     <div className="services_model_content">
-                        <i className="uil uil-times services_model_close"></i>
+                        <i onClick={() => toggleTab(0)} className="uil uil-times services_model_close"></i>
                         <h3 className="services_model_title">IOS Developer</h3>
                         <p className="services_model_description">Service with more than 3 years of experience. Providing quality work to clients and companies.</p>
 
