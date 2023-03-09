@@ -22,8 +22,6 @@ const Social = () => {
         <a href="" className="home_social_icon" target="_blank">
         <i class="uil uil-behance"></i>
         </a>
-
-
     </div>
   )
 }
