@@ -47,3 +47,12 @@
     font-size: var(--smaller-font-size);
     margin-top: 4.5rem;
 }
+
+/*  RESPONSIVENESS  */
+/* For large devices */
+@media screen and (max-width: 992px) {
+    .footer_social_icon {
+        padding: 0.125rem 0.25rem;
+        border-radius: 0.25rem;
+    }
+}
