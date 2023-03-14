@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css'
 
 const Contact = () => {
+    const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_1lnf3hw', 'template_ayo5fiz', form.current, 'mlMa1Noj5ychNXHJ4')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        }); //e.target.reset() instead of then
+    };
+
   return (
     <section className="contact section" id="contact">
         <h2 className="section_title">Get in touch</h2>
@@ -53,7 +67,7 @@ const Contact = () => {
             <div className="cotact_content">
                 <h3 className="contact_title">Write your message</h3>
 
-                <form className="contact_form">
+                <form ref={form} onSubmit={sendEmail} className="contact_form">
                     <div className="contact_form_div">
                         <label htmlFor="" className="contact_form_tag">Name</label>
                         <input type="text" name="name" className="contact_form_input" placeholder='Enter your name'/>
@@ -64,9 +78,9 @@ const Contact = () => {
                         <input type="email" name="email" className="contact_form_input" placeholder='Enter your email'/>
                     </div>
 
-                    <div className="contact_form_div">
+                    <div className="contact_form_div contact_form_area">
                         <label htmlFor="" className="contact_form_tag">Your message</label>
-                            <textarea name="messafe" cols="30" rows="10" className="contact_form_input" placeholder='Enter your thoughts'></textarea>
+                            <textarea name="message" cols="30" rows="10" className="contact_form_input" placeholder='Enter your thoughts'></textarea>
                         </div>
                     
                     <a href="#contacts" className="button button--flex">Send Message</a>
