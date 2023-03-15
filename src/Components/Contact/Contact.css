@@ -56,7 +56,7 @@
     font-size: 1rem;
     transition: 0.3s;
 }
-.contact_button:hover, .contact_button_icon {
+.contact_button:hover .contact_button_icon {
     transform: translate(0.25rem);
 }
 
